@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkAdjustment" id="bant_araligi">
+    <property name="lower">200000</property>
+    <property name="upper">20000000</property>
+    <property name="value">4000000</property>
+    <property name="step-increment">1000</property>
+  </object>
+  <object class="GtkAdjustment" id="kazanc_araligi">
+    <property name="upper">70</property>
+    <property name="value">35</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="merkez_frekans_araligi">
+    <property name="lower">325</property>
+    <property name="upper">3800</property>
+    <property name="value">2400</property>
+    <property name="step-increment">25</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkWindow" id="ana_ekran">
+    <property name="can-focus">False</property>
+    <property name="title" translatable="yes">Spektrum Analiztör</property>
+    <property name="window-position">center</property>
+    <property name="default-width">1280</property>
+    <property name="default-height">720</property>
+    <child>
+      <!-- n-columns=3 n-rows=1 -->
+      <object class="GtkGrid" id="ana_ekran_grid">
+        <property name="width-request">1280</property>
+        <property name="height-request">720</property>
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="row-homogeneous">True</property>
+        <child>
+          <object class="GtkBox" id="orta_frame">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="margin-start">4</property>
+            <property name="margin-end">4</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">True</property>
+            <property name="orientation">vertical</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkDrawingArea" id="spektrum">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkDrawingArea" id="spektrogram">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">1</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="sol_frame">
+            <property name="width-request">300</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child>
+                  <object class="GtkFixed">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel" id="merkez_frekans_label">
+                        <property name="width-request">300</property>
+                        <property name="height-request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Merkez Frekans [MHz]</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Monospace Bold 12"/>
+                          <attribute name="style" value="normal"/>
+                        </attributes>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="merkez_frekans_kutusu">
+                        <property name="width-request">74</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="max-length">5</property>
+                        <property name="width-chars">5</property>
+                        <property name="max-width-chars">0</property>
+                      </object>
+                      <packing>
+                        <property name="x">199</property>
+                        <property name="y">86</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScale" id="merkez_frekans_scale">
+                        <property name="width-request">247</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="adjustment">merkez_frekans_araligi</property>
+                        <property name="fill-level">3800</property>
+                        <property name="round-digits">0</property>
+                        <property name="value-pos">bottom</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">35</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="merkez_dugmesi">
+                        <property name="label" translatable="yes">Pozisyon Degistir</property>
+                        <property name="width-request">163</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">86</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="bant_label">
+                        <property name="width-request">300</property>
+                        <property name="height-request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Bant Genişliği</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Monospace Bold 12"/>
+                          <attribute name="style" value="normal"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="y">142</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScale" id="bant_scale">
+                        <property name="width-request">177</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="adjustment">bant_araligi</property>
+                        <property name="fill-level">20000000</property>
+                        <property name="round-digits">0</property>
+                        <property name="digits">0</property>
+                        <property name="value-pos">bottom</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">175</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="bant_dugmesi">
+                        <property name="label" translatable="yes">Pozisyon Degistir</property>
+                        <property name="width-request">163</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">228</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="bant_kutusu">
+                        <property name="width-request">74</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="max-length">5</property>
+                        <property name="width-chars">5</property>
+                        <property name="max-width-chars">0</property>
+                      </object>
+                      <packing>
+                        <property name="x">199</property>
+                        <property name="y">228</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="bant_sec">
+                        <property name="width-request">70</property>
+                        <property name="height-request">45</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="active">1</property>
+                        <property name="active-id">1</property>
+                        <items>
+                          <item id="1" translatable="yes">MHz</item>
+                          <item id="2" translatable="yes">KHz</item>
+                        </items>
+                      </object>
+                      <packing>
+                        <property name="x">202</property>
+                        <property name="y">175</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="mod_label">
+                        <property name="width-request">300</property>
+                        <property name="height-request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Otomatik Kazanç Kontrolü</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Monospace Bold Italic 12"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="y">284</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="mod_sec">
+                        <property name="width-request">247</property>
+                        <property name="height-request">45</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="active">1</property>
+                        <property name="active-id">slow_attack</property>
+                        <items>
+                          <item id="slow_attack" translatable="yes">Yavaş Mod</item>
+                          <item id="fast_attack" translatable="yes">Hızlı Mod</item>
+                          <item id="manual" translatable="yes">Manuel Mod</item>
+                        </items>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">319</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="kazan_label">
+                        <property name="width-request">300</property>
+                        <property name="height-request">30</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">Kazanç [dB] </property>
+                        <attributes>
+                          <attribute name="font-desc" value="Monospace Bold 12"/>
+                          <attribute name="style" value="normal"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="y">395</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScale" id="kazanc_scale">
+                        <property name="width-request">247</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="adjustment">kazanc_araligi</property>
+                        <property name="fill-level">70</property>
+                        <property name="round-digits">1</property>
+                        <property name="value-pos">bottom</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">430</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="kazanc_dugmesi">
+                        <property name="label" translatable="yes">Pozisyon Degistir</property>
+                        <property name="width-request">163</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="x">25</property>
+                        <property name="y">483</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="kazanc_kutusu">
+                        <property name="width-request">74</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="max-length">5</property>
+                        <property name="width-chars">5</property>
+                        <property name="max-width-chars">0</property>
+                      </object>
+                      <packing>
+                        <property name="x">199</property>
+                        <property name="y">483</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">0</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="sag_frame">
+            <property name="width-request">300</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">False</property>
+            <property name="vexpand">False</property>
+            <property name="orientation">vertical</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkFixed" id="sag_frame_ustu">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">False</property>
+                <property name="vexpand">False</property>
+                <child>
+                  <object class="GtkLabel" id="adalm_pluto_ayar_label">
+                    <property name="width-request">300</property>
+                    <property name="height-request">30</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Adalm-Pluto Ayarları</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Monospace Bold 13"/>
+                      <attribute name="style" value="normal"/>
+                    </attributes>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="Ip">
+                    <property name="width-request">100</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">IP Adresi:</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Monospace Bold 11"/>
+                      <attribute name="style" value="normal"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">7</property>
+                    <property name="y">55</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="ornekleme_label">
+                    <property name="width-request">90</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Örnekleme Sayısı [kHz]:</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Monospace Bold 10"/>
+                      <attribute name="style" value="normal"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">9</property>
+                    <property name="y">155</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="ornek_label">
+                    <property name="width-request">90</property>
+                    <property name="height-request">34</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Örnek sayısı:</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Monospace Bold 10"/>
+                      <attribute name="style" value="normal"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="x">10</property>
+                    <property name="y">105</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="ip_entry">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="max-length">11</property>
+                    <property name="width-chars">16</property>
+                    <property name="max-width-chars">11</property>
+                    <property name="text" translatable="yes">192.168.2.1</property>
+                    <property name="placeholder-text" translatable="yes">IP adresi girin </property>
+                    <property name="input-purpose">number</property>
+                  </object>
+                  <packing>
+                    <property name="x">142</property>
+                    <property name="y">55</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="ornek_entry">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="max-length">5</property>
+                    <property name="width-chars">9</property>
+                    <property name="max-width-chars">5</property>
+                    <property name="text" translatable="yes">1024</property>
+                    <property name="placeholder-text" translatable="yes">Değer girin</property>
+                    <property name="input-purpose">number</property>
+                  </object>
+                  <packing>
+                    <property name="x">196</property>
+                    <property name="y">104</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="ornekleme_entry">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="max-length">5</property>
+                    <property name="width-chars">9</property>
+                    <property name="max-width-chars">5</property>
+                    <property name="text" translatable="yes">30720</property>
+                    <property name="placeholder-text" translatable="yes">Değer girin</property>
+                    <property name="input-purpose">number</property>
+                  </object>
+                  <packing>
+                    <property name="x">196</property>
+                    <property name="y">155</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="baslama_dugmesi">
+                    <property name="label" translatable="yes">Başlat</property>
+                    <property name="width-request">210</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="receives-default">True</property>
+                  </object>
+                  <packing>
+                    <property name="x">42</property>
+                    <property name="y">200</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="sag_frame_orta">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkViewport" id="sag_frame_orta1">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkFixed" id="sag_frame_orta_fixed">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkTextView" id="mesaj_log_kutusu">
+                            <property name="width-request">300</property>
+                            <property name="height-request">328</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="opacity">0.8509803921568627</property>
+                            <property name="hscroll-policy">natural</property>
+                            <property name="editable">False</property>
+                            <property name="wrap-mode">word</property>
+                            <property name="monospace">True</property>
+                          </object>
+                          <packing>
+                            <property name="y">30</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="mesaj_label">
+                            <property name="width-request">300</property>
+                            <property name="height-request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Mesaj Log:</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Monospace Bold 13"/>
+                              <attribute name="style" value="normal"/>
+                            </attributes>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow" id="sag_frame_alti">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkViewport" id="sag_frame_alti2">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkFixed" id="sag_frame_alti_fixed">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkLabel" id="filtre_ayarlari_label">
+                            <property name="width-request">300</property>
+                            <property name="height-request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Filtre Ayarları</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Monospace Bold 12"/>
+                              <attribute name="style" value="normal"/>
+                            </attributes>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="gorunum_ayarlari_label">
+                            <property name="width-request">300</property>
+                            <property name="height-request">30</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Görünüm Ayarları</property>
+                            <attributes>
+                              <attribute name="font-desc" value="Monospace Bold 12"/>
+                              <attribute name="style" value="normal"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="y">125</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="filtresiz_dugmesi">
+                            <property name="label" translatable="yes">Filtresiz</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">17</property>
+                            <property name="y">45</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="hann_filtre_dugmesi">
+                            <property name="label" translatable="yes">Hann Filtresi</property>
+                            <property name="width-request">100</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                            <property name="group">filtresiz_dugmesi</property>
+                          </object>
+                          <packing>
+                            <property name="x">17</property>
+                            <property name="y">80</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="hamming_filtre_dugmesi">
+                            <property name="label" translatable="yes">Hamming Filtresi</property>
+                            <property name="width-request">100</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                            <property name="group">filtresiz_dugmesi</property>
+                          </object>
+                          <packing>
+                            <property name="x">133</property>
+                            <property name="y">80</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="blackman_filtre_dugmesi">
+                            <property name="label" translatable="yes">Blackman Filtresi</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                            <property name="group">filtresiz_dugmesi</property>
+                          </object>
+                          <packing>
+                            <property name="x">133</property>
+                            <property name="y">45</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="jet_dugmesi">
+                            <property name="label" translatable="yes">Jet</property>
+                            <property name="width-request">58</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">17</property>
+                            <property name="y">170</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="virdis_dugmesi">
+                            <property name="label" translatable="yes">Viridis</property>
+                            <property name="width-request">82</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                            <property name="group">jet_dugmesi</property>
+                          </object>
+                          <packing>
+                            <property name="x">82</property>
+                            <property name="y">170</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkRadioButton" id="siyah_kirimizi_dugmesi">
+                            <property name="label" translatable="yes">Siyah - Kırmızı</property>
+                            <property name="width-request">100</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">False</property>
+                            <property name="active">True</property>
+                            <property name="draw-indicator">True</property>
+                            <property name="group">jet_dugmesi</property>
+                          </object>
+                          <packing>
+                            <property name="x">167</property>
+                            <property name="y">170</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="left-attach">2</property>
+            <property name="top-attach">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
